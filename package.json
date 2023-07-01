@@ -1,0 +1,6 @@
+{
+    "name": "geddit",
+    "version": "0.1",
+    "description": "Reddit's public API without authentication",
+    "type": "module"
+}
