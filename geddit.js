@@ -1,13 +1,9 @@
 class Geddit {
     constructor() {
-        this.host = "https://www.reddit.com",
-            this.parameters = {
-                limit: 12,
-                after: null,
-                count: null,
-                show: null,
-                t: null
-            }
+        this.host = "https://www.reddit.com";
+        this.parameters = {
+            limit: 12
+        }
     }
 
     async getHot(subreddit = null, options = this.parameters) {
@@ -186,7 +182,7 @@ class Geddit {
             .catch(err => null);
     }
 
-    async getSubredditWikiPageRevisions(subreddit) {
+    async getSubredditWikiPageRevisions(subreddit, page) {
         return await fetch(this.host + "/r/" + subreddit + "/wiki/revisions" + page + ".json")
             .then(res => res.json())
             .then(json => json.data.children)
@@ -283,7 +279,7 @@ class Geddit {
             .catch(err => null);
     }
 
-    async search(query, subreddit = null, options = this.parameters) {
+    async searchAll(query, subreddit = null, options = this.parameters) {
         options.q = query;
         subreddit = subreddit ? "/r/" + subreddit : "";
         return await fetch(this.host + subreddit + "/search.json?" + new URLSearchParams(options))

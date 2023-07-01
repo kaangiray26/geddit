@@ -2,5 +2,11 @@
     "name": "geddit",
     "version": "0.1",
     "description": "Reddit's public API without authentication",
-    "type": "module"
+    "type": "module",
+    "devDependencies": {
+        "terser": "^5.18.2"
+    },
+    "scripts": {
+        "deploy": "sh deploy.sh"
+    }
 }
