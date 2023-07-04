@@ -323,6 +323,13 @@ class Geddit {
             .catch(err => null);
     }
 
+    async getUserOverview(username, options = this.parameters) {
+        return await fetch(this.host + "/user/" + username + "/overview.json?" + new URLSearchParams(options))
+            .then(res => res.json())
+            .then(json => json.data.children.map(child => child.data))
+            .catch(err => null);
+    }
+
     async getUserComments(username, options = this.parameters) {
         return await fetch(this.host + "/user/" + username + "/comments.json?" + new URLSearchParams(options))
             .then(res => res.json())
