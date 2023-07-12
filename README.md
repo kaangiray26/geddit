@@ -86,3 +86,6 @@ Here are the methods that are available in Geddit. All methods return a promise 
 
 ## Contribution
 If you discover a new endpoint that is not in the list above, feel free to open an issue or a pull request.
+
+## Disclaimer
+This project is an **open-source** software. The projects is nothing more than a simple example of how to use Reddit's RSS/JSON feeds to build a library and it is not intended to be used instead of the Reddit API. Instead, use the official Reddit app or any other Reddit client that uses Reddit's API for full functionality. **No data is collected** from the users and **no profit is made** from the library. Developers are not responsible for any damage caused by the library. **Use at your own risk.**
